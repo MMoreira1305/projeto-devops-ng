@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Customer, Representative } from 'src/app/demo/api/customer';
-import { CustomerService } from 'src/app/demo/service/customer.service';
-import { Product } from 'src/app/demo/api/product';
-import { ProductService } from 'src/app/demo/service/product.service';
+import { Customer, Representative } from '../../../api/customer';
+import { CustomerService } from '../../../service/customer.service';
+import { Product } from '../../../api/product';
+import { ProductService } from '../../../service/product.service';
 import { Table } from 'primeng/table';
 import { MessageService, ConfirmationService } from 'primeng/api';
 
@@ -114,7 +114,7 @@ export class TableDemoComponent implements OnInit {
 
     expandAll() {
         if (!this.isExpanded) {
-            this.products.forEach(product => product && product.name ? this.expandedRows[product.name] = true : '');
+            this.products.forEach(product => product && product.nome ? this.expandedRows[product.nome] = true : '');
 
         } else {
             this.expandedRows = {};
